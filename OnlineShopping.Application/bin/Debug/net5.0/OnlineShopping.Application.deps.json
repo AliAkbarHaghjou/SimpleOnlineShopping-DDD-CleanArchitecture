@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "OnlineShopping.Application/1.0.0": {
+        "dependencies": {
+          "OnlineShopping.Domain": "1.0.0"
+        },
+        "runtime": {
+          "OnlineShopping.Application.dll": {}
+        }
+      },
+      "OnlineShopping.Domain/1.0.0": {
+        "runtime": {
+          "OnlineShopping.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "OnlineShopping.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "OnlineShopping.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
