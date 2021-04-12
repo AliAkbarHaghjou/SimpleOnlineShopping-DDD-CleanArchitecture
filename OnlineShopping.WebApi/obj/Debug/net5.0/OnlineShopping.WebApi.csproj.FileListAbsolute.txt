@@ -199,3 +199,5 @@ F:\Projects\SimpleOnlineShopping-DDD-CleanArchitecture\OnlineShopping.WebApi\obj
 F:\Projects\SimpleOnlineShopping-DDD-CleanArchitecture\OnlineShopping.WebApi\obj\Debug\net5.0\ref\OnlineShopping.WebApi.dll
 F:\Projects\SimpleOnlineShopping-DDD-CleanArchitecture\OnlineShopping.WebApi\obj\Debug\net5.0\OnlineShopping.WebApi.pdb
 F:\Projects\SimpleOnlineShopping-DDD-CleanArchitecture\OnlineShopping.WebApi\obj\Debug\net5.0\OnlineShopping.WebApi.genruntimeconfig.cache
+F:\Projects\SimpleOnlineShopping-DDD-CleanArchitecture\OnlineShopping.WebApi\bin\Debug\net5.0\OnlineShopping.Service.dll
+F:\Projects\SimpleOnlineShopping-DDD-CleanArchitecture\OnlineShopping.WebApi\bin\Debug\net5.0\OnlineShopping.Service.pdb

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OnlineShopping.Application.Repositories;
+using OnlineShopping.Application.Services;
 using OnlineShopping.Domain.AggregatesModel.OrderAggregate;
 using OnlineShopping.WebApi.Mappers;
 using OnlineShopping.WebApi.ViewModels.OrderViewModels;
@@ -15,59 +16,46 @@ namespace OnlineShopping.WebApi.Controllers
     [ApiController]
     public class OrderController : ControllerBase
     {
-        private readonly IOrderRepositry _orderRepositry;
+        private readonly IOrderService _orderService;
 
-        public OrderController(IOrderRepositry orderRepositry)
+        public OrderController(IOrderService orderService)
         {
-            _orderRepositry = orderRepositry;
+            _orderService = orderService;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<OrderViewModel>>> Get()
+        public async Task<ActionResult<IEnumerable<OrderViewModel>>> GetOrders()
         {
-            var result = await _orderRepositry.GetAll();
+            var result = await _orderService.GetAllOrders();
             return Ok(result.Select(x => x.ToViewModel()));
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<OrderViewModel>>> GetById(int id)
+        public async Task<ActionResult<IEnumerable<OrderViewModel>>> GetOrderById(int id)
         {
-            var result = await _orderRepositry.Find(id);
-            if (result == null)
-            {
-                return NotFound();
-            }
+            var result = await _orderService.GetOrderByID(id);
             return Ok(result.ToViewModel());
         }
 
         [HttpPost]
-        public async Task<ActionResult<IEnumerable<OrderViewModel>>> Post(CreateUpdateOrderViewModel model)
+        public async Task<ActionResult<IEnumerable<OrderViewModel>>> AddOrder(CreateUpdateOrderViewModel model)
         {
-            var result = await _orderRepositry.Add(new Order(model.BuyerId, model.ProductName, model.Description, model.OrderDate));
-            await _orderRepositry.SaveChanges();
-            return CreatedAtAction(nameof(GetById), new { id = result.Id }, result.ToViewModel());
+            var result = await _orderService.CreateOrder(new Order(model.BuyerId, model.ProductName, model.Description, model.OrderDate));
+            return CreatedAtAction(nameof(GetOrderById), new { id = result.Id }, result.ToViewModel());
         }
 
         [HttpPut]
-        public async Task<ActionResult<IEnumerable<OrderViewModel>>> Put(int id, CreateUpdateOrderViewModel model)
+        public async Task<ActionResult<IEnumerable<OrderViewModel>>> UpdateOrder(int id, CreateUpdateOrderViewModel model)
         {
-            var result = await _orderRepositry.Find(id);
-            if (result == null) return NotFound();
-            result.SetBuyerId(model.BuyerId).SetProductName(model.ProductName).SetDescription(model.Description).SetOrderDate(model.OrderDate);
-            result = _orderRepositry.Update(result);
-            await _orderRepositry.SaveChanges();
+            var result = await _orderService.UpdateOrder(new Order(model.BuyerId, model.ProductName, model.Description, model.OrderDate), id);
             return Ok(result.ToViewModel());
         }
 
         [HttpDelete]
-        public async Task<ActionResult<IEnumerable<OrderViewModel>>> Delete(int id)
+        public async Task<ActionResult<IEnumerable<OrderViewModel>>> DeleteOrder(int id)
         {
-            var result = await _orderRepositry.Find(id);
-            if (result == null) return NotFound();
-            result = _orderRepositry.Remove(result);
-            await _orderRepositry.SaveChanges();
+            var result = await _orderService.DeleteOrder(id);
             return Ok(result.ToViewModel());
         }
-
     }
 }

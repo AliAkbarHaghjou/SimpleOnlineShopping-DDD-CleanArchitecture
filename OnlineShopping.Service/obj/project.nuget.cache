@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "s3Wx30YkHegzLIWnS99vrAw1vbakKMb5Z321dVDsi+7+4k2O5rk+Oefd3UBQlzGJu0CUfpii3BZL+nlaRK9maQ==",
+  "success": true,
+  "projectFilePath": "F:\\Projects\\SimpleOnlineShopping-DDD-CleanArchitecture\\OnlineShopping.Service\\OnlineShopping.Service.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Haghjou\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

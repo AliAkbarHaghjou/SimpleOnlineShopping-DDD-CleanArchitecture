@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using OnlineShopping.Persistence;
+using OnlineShopping.Service;
 
 namespace OnlineShopping.WebApi
 {
@@ -20,10 +21,9 @@ namespace OnlineShopping.WebApi
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddPersistenceInfrastructure(Configuration);
-
             services.AddControllers();
-
+            services.AddPersistenceInfrastructure(Configuration);
+            services.AddServiceInfrastructure();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "OnlineShopping.WebApi", Version = "v1" });

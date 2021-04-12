@@ -13,7 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\OnlineShopping.Application\OnlineShopping.Application.csproj" />
     <ProjectReference Include="..\OnlineShopping.Persistence\OnlineShopping.Persistence.csproj" />
+    <ProjectReference Include="..\OnlineShopping.Service\OnlineShopping.Service.csproj" />
   </ItemGroup>
 
 </Project>

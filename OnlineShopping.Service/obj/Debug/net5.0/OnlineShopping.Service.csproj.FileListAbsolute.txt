@@ -1,0 +1,17 @@
+F:\Projects\SimpleOnlineShopping-DDD-CleanArchitecture\OnlineShopping.Service\bin\Debug\net5.0\OnlineShopping.Service.deps.json
+F:\Projects\SimpleOnlineShopping-DDD-CleanArchitecture\OnlineShopping.Service\bin\Debug\net5.0\OnlineShopping.Service.dll
+F:\Projects\SimpleOnlineShopping-DDD-CleanArchitecture\OnlineShopping.Service\bin\Debug\net5.0\ref\OnlineShopping.Service.dll
+F:\Projects\SimpleOnlineShopping-DDD-CleanArchitecture\OnlineShopping.Service\bin\Debug\net5.0\OnlineShopping.Service.pdb
+F:\Projects\SimpleOnlineShopping-DDD-CleanArchitecture\OnlineShopping.Service\bin\Debug\net5.0\OnlineShopping.Application.dll
+F:\Projects\SimpleOnlineShopping-DDD-CleanArchitecture\OnlineShopping.Service\bin\Debug\net5.0\OnlineShopping.Domain.dll
+F:\Projects\SimpleOnlineShopping-DDD-CleanArchitecture\OnlineShopping.Service\bin\Debug\net5.0\OnlineShopping.Application.pdb
+F:\Projects\SimpleOnlineShopping-DDD-CleanArchitecture\OnlineShopping.Service\bin\Debug\net5.0\OnlineShopping.Domain.pdb
+F:\Projects\SimpleOnlineShopping-DDD-CleanArchitecture\OnlineShopping.Service\obj\Debug\net5.0\OnlineShopping.Service.csprojAssemblyReference.cache
+F:\Projects\SimpleOnlineShopping-DDD-CleanArchitecture\OnlineShopping.Service\obj\Debug\net5.0\OnlineShopping.Service.GeneratedMSBuildEditorConfig.editorconfig
+F:\Projects\SimpleOnlineShopping-DDD-CleanArchitecture\OnlineShopping.Service\obj\Debug\net5.0\OnlineShopping.Service.AssemblyInfoInputs.cache
+F:\Projects\SimpleOnlineShopping-DDD-CleanArchitecture\OnlineShopping.Service\obj\Debug\net5.0\OnlineShopping.Service.AssemblyInfo.cs
+F:\Projects\SimpleOnlineShopping-DDD-CleanArchitecture\OnlineShopping.Service\obj\Debug\net5.0\OnlineShopping.Service.csproj.CoreCompileInputs.cache
+F:\Projects\SimpleOnlineShopping-DDD-CleanArchitecture\OnlineShopping.Service\obj\Debug\net5.0\OnlineShopping.Service.csproj.CopyComplete
+F:\Projects\SimpleOnlineShopping-DDD-CleanArchitecture\OnlineShopping.Service\obj\Debug\net5.0\OnlineShopping.Service.dll
+F:\Projects\SimpleOnlineShopping-DDD-CleanArchitecture\OnlineShopping.Service\obj\Debug\net5.0\ref\OnlineShopping.Service.dll
+F:\Projects\SimpleOnlineShopping-DDD-CleanArchitecture\OnlineShopping.Service\obj\Debug\net5.0\OnlineShopping.Service.pdb

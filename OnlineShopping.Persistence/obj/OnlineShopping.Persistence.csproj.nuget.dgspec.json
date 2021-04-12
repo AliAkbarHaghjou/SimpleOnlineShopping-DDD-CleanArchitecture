@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -112,7 +112,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -142,9 +142,6 @@
             "projectReferences": {
               "F:\\Projects\\SimpleOnlineShopping-DDD-CleanArchitecture\\OnlineShopping.Application\\OnlineShopping.Application.csproj": {
                 "projectPath": "F:\\Projects\\SimpleOnlineShopping-DDD-CleanArchitecture\\OnlineShopping.Application\\OnlineShopping.Application.csproj"
-              },
-              "F:\\Projects\\SimpleOnlineShopping-DDD-CleanArchitecture\\OnlineShopping.Domain\\OnlineShopping.Domain.csproj": {
-                "projectPath": "F:\\Projects\\SimpleOnlineShopping-DDD-CleanArchitecture\\OnlineShopping.Domain\\OnlineShopping.Domain.csproj"
               }
             }
           }
@@ -179,7 +176,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

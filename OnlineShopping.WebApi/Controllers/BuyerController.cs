@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OnlineShopping.Application.Repositories;
+using OnlineShopping.Application.Services;
 using OnlineShopping.Domain.AggregatesModel.BuyerAggregate;
 using OnlineShopping.WebApi.Mappers;
 using OnlineShopping.WebApi.ViewModels.BuyerViewModels;
@@ -15,73 +16,58 @@ namespace OnlineShopping.WebApi.Controllers
     [ApiController]
     public class BuyerController : Controller
     {
-        private readonly IBuyerRepositry _buyerRepositry;
+        private readonly IBuyerService _buyerService;
 
-        public BuyerController(IBuyerRepositry buyerRepositry)
+        public BuyerController(IBuyerService buyerService)
         {
-            _buyerRepositry = buyerRepositry;
+            _buyerService = buyerService;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<BuyerViewModel>>> Get()
+        public async Task<ActionResult<IEnumerable<BuyerViewModel>>> GetBuyers()
         {
-            var result = await _buyerRepositry.GetAll();
+            var result = await _buyerService.GetAllBuyers();
             return Ok(result.Select(x => x.ToViewModel()));
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<IEnumerable<BuyerViewModel>>> GetById(int id)
+        public async Task<ActionResult<IEnumerable<BuyerViewModel>>> GetBuyerById(int id)
         {
-            var result = await _buyerRepositry.Find(id);
-            if (result == null)
-            {
-                return NotFound();
-            }
+            var result = await _buyerService.GetBuyerByID(id);
             return Ok(result.ToViewModel());
         }
 
         [HttpPost]
-        public async Task<ActionResult<IEnumerable<BuyerViewModel>>> Post(CreateUpdateBuyerViewModel model)
+        public async Task<ActionResult<IEnumerable<BuyerViewModel>>> AddBuyer(CreateUpdateBuyerViewModel model)
         {
-            var result = await _buyerRepositry.Add(new Buyer(model.Firstname, model.Lastname, model.Nationalcode));
-            await _buyerRepositry.SaveChanges();
-            return CreatedAtAction(nameof(GetById), new { id = result.Id }, result.ToViewModel());
+            var result = await _buyerService.CreateBuyer(new Buyer(model.Firstname, model.Lastname, model.Nationalcode));
+            return CreatedAtAction(nameof(GetBuyerById), new { id = result.Id }, result.ToViewModel());
         }
 
         [HttpPut]
-        public async Task<ActionResult<IEnumerable<BuyerViewModel>>> Put(int id, CreateUpdateBuyerViewModel model)
+        public async Task<ActionResult<IEnumerable<BuyerViewModel>>> UpdateBuyer(int id, CreateUpdateBuyerViewModel model)
         {
-            var result = await _buyerRepositry.Find(id);
-            if (result == null) return NotFound();
-            result.SetFirstname(model.Firstname).SetLastname(model.Lastname).SetNationalcode(model.Nationalcode);
-            result = _buyerRepositry.Update(result);
-            await _buyerRepositry.SaveChanges();
+            var result = await _buyerService.UpdateBuyer(new Buyer(model.Firstname, model.Lastname, model.Nationalcode), id);
             return Ok(result.ToViewModel());
         }
 
         [HttpDelete]
-        public async Task<ActionResult<IEnumerable<BuyerViewModel>>> Delete(int id)
+        public async Task<ActionResult<IEnumerable<BuyerViewModel>>> DeleteBuyer(int id)
         {
-            var result = await _buyerRepositry.Find(id);
-            if (result == null) return NotFound();
-            result = _buyerRepositry.Remove(result);
-            await _buyerRepositry.SaveChanges();
+            var result = await _buyerService.DeleteBuyer(id);
             return Ok(result.ToViewModel());
         }
 
         [HttpGet("{buyerId}/ContactInfo")]
         public async Task<ActionResult<IEnumerable<ContactInfoViewModel>>> GetAllContactInfoByBuyerID(int buyerId)
         {
-            return Ok(await _buyerRepositry.GetAllContactInfos(buyerId));
+            return Ok(await _buyerService.GetAllContactInfos(buyerId));
         }
 
         [HttpPost("{buyerId}/ContactInfo")]
         public async Task<ActionResult<IEnumerable<ContactInfoViewModel>>> AddContactInfo(int buyerId, CreateUpdateContactInfoViewModel model)
         {
-            var buyer = await _buyerRepositry.Find(buyerId);
-            if (buyer == null) return NotFound();
-            var ContactInfo = _buyerRepositry.AddContactInfo(buyer, model.address, model.email, model.mobile);
-            await _buyerRepositry.SaveChanges();
+            var ContactInfo = await _buyerService.AddContactInfo(buyerId, new ContactInfo(model.address, model.email, model.mobile));
             return Ok(ContactInfo.ToViewModel());
         }
 
@@ -89,10 +75,7 @@ namespace OnlineShopping.WebApi.Controllers
         [HttpDelete("{buyerId}/ContactInfo/contactinfoId")]
         public async Task<ActionResult<IEnumerable<ContactInfoViewModel>>> DeleteContactInfo(int contactinfoId, int buyerId)
         {
-            var buyer = await _buyerRepositry.Find(buyerId);
-            if (buyer == null) return NotFound();
-            var ContactInfo = _buyerRepositry.RemoveContactInfo(buyer, contactinfoId);
-            await _buyerRepositry.SaveChanges();
+            var ContactInfo = await _buyerService.DeleteContactInfo(contactinfoId, buyerId);
             return Ok(ContactInfo.ToViewModel());
         }
     }

@@ -9,8 +9,7 @@
       "OnlineShopping.Persistence/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.4",
-          "OnlineShopping.Application": "1.0.0",
-          "OnlineShopping.Domain": "1.0.0"
+          "OnlineShopping.Application": "1.0.0"
         },
         "runtime": {
           "OnlineShopping.Persistence.dll": {}

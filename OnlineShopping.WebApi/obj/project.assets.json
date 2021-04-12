@@ -1607,14 +1607,27 @@
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.4",
-          "OnlineShopping.Application": "1.0.0",
-          "OnlineShopping.Domain": "1.0.0"
+          "OnlineShopping.Application": "1.0.0"
         },
         "compile": {
           "bin/placeholder/OnlineShopping.Persistence.dll": {}
         },
         "runtime": {
           "bin/placeholder/OnlineShopping.Persistence.dll": {}
+        }
+      },
+      "OnlineShopping.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "5.0.0",
+          "OnlineShopping.Application": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/OnlineShopping.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OnlineShopping.Service.dll": {}
         }
       }
     }
@@ -5991,12 +6004,19 @@
       "type": "project",
       "path": "../OnlineShopping.Persistence/OnlineShopping.Persistence.csproj",
       "msbuildProject": "../OnlineShopping.Persistence/OnlineShopping.Persistence.csproj"
+    },
+    "OnlineShopping.Service/1.0.0": {
+      "type": "project",
+      "path": "../OnlineShopping.Service/OnlineShopping.Service.csproj",
+      "msbuildProject": "../OnlineShopping.Service/OnlineShopping.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
       "Microsoft.EntityFrameworkCore.Design >= 5.0.4",
+      "OnlineShopping.Application >= 1.0.0",
       "OnlineShopping.Persistence >= 1.0.0",
+      "OnlineShopping.Service >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.1.1"
     ]
   },
@@ -6027,8 +6047,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
+            "F:\\Projects\\SimpleOnlineShopping-DDD-CleanArchitecture\\OnlineShopping.Application\\OnlineShopping.Application.csproj": {
+              "projectPath": "F:\\Projects\\SimpleOnlineShopping-DDD-CleanArchitecture\\OnlineShopping.Application\\OnlineShopping.Application.csproj"
+            },
             "F:\\Projects\\SimpleOnlineShopping-DDD-CleanArchitecture\\OnlineShopping.Persistence\\OnlineShopping.Persistence.csproj": {
               "projectPath": "F:\\Projects\\SimpleOnlineShopping-DDD-CleanArchitecture\\OnlineShopping.Persistence\\OnlineShopping.Persistence.csproj"
+            },
+            "F:\\Projects\\SimpleOnlineShopping-DDD-CleanArchitecture\\OnlineShopping.Service\\OnlineShopping.Service.csproj": {
+              "projectPath": "F:\\Projects\\SimpleOnlineShopping-DDD-CleanArchitecture\\OnlineShopping.Service\\OnlineShopping.Service.csproj"
             }
           }
         }
@@ -6072,7 +6098,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
